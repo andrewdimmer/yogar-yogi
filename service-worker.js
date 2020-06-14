@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/yogar-yogi/precache-manifest.acbfa7cb3255bbc6199baefbe8a873c4.js"
+  "/yogar-yogi/precache-manifest.d7acdab8a36eba918c14ac8515d4e140.js"
 );
 
 self.addEventListener('message', (event) => {
