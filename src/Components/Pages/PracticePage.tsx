@@ -11,7 +11,7 @@ import { PageProps } from ".";
 import { yogaPoses } from "../../Data/poses";
 import { Calibration, getCalibration } from "../../Scripts/poseCalibration";
 import CalibrateCamera from "../Content/GameModules/CalibrateCamera";
-import Dance from "../Content/GameModules/Dance";
+import Practice from "../Content/GameModules/Practice";
 import GrantCameraAccess from "../Content/GameModules/GrantCameraAccess";
 import ScoreScreen from "../Content/GameModules/ScoreScreen";
 import SelectPoses from "../Content/GameModules/SelectPoses";
@@ -35,7 +35,7 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
     "Grant Camera Permission",
     "Calibrate Camera",
     "Select Poses",
-    "Dance!",
+    "Practice!",
   ];
 
   function getStepContent(step: number) {
@@ -49,7 +49,6 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
           />
         );
       case 1:
-        handleNext();
         return (
           <CalibrateCamera
             nextStep={handleNext}
@@ -72,11 +71,17 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
       case 3:
         if (calibration !== null) {
           return (
-            <Dance
+            <Practice
               nextStep={handleNext}
               previousStep={handleBack}
               classes={classes}
               calibration={calibration}
+              poses={yogaPoses.reduce((prev, current, index) => {
+                if (poses[index] && current.pose) {
+                  prev.push(current.pose);
+                }
+                return prev;
+              }, [] as Pose[])}
             />
           );
         } else {
@@ -168,7 +173,7 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
     <Fragment>
       <Container className={classes.pageTitle}>
         <Typography variant="h3">
-          Let's get ready to play Dance 'Til You Drop!
+          Let's get ready to play yogAR yogi!
         </Typography>
       </Container>
       <Stepper activeStep={activeStep} className={classes.themeBackgroundColor}>
