@@ -48,7 +48,7 @@ const pageList: PageListItem[] = [
     component: LearnPage,
   },
   {
-    key: "practive",
+    key: "practice",
     title: "Practice",
     menuLabel: "Practice",
     menuIcon: PlayIcon,
