@@ -40,7 +40,7 @@ export const yogaPoses: YogaPose[] = [
     ar: {
       echoarId: "eabfa791-ab02-4c79-be35-447596ff6f6f",
       preview: window.location.href + "/assets/images/LotusPose.jpg",
-      usdz: window.location.href + "/assets/images/Anna_Full_Lotus.usdz",
+      usdz: window.location.href + "/assets/models/Anna_Full_Lotus.usdz",
     },
   },
   {
@@ -49,7 +49,7 @@ export const yogaPoses: YogaPose[] = [
     ar: {
       echoarId: "938011b5-8ecf-4b69-aecf-62747172e874",
       preview: window.location.href + "/assets/images/WheelPose.jpg",
-      usdz: window.location.href + "/assets/images/Anna_Reverse_Wheel.usdz",
+      usdz: window.location.href + "/assets/models/Anna_Reverse_Wheel.usdz",
     },
   },
 ];

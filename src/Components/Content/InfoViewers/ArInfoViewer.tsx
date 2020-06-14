@@ -45,8 +45,8 @@ const ArInfoViewer: React.FunctionComponent<ArInfoViewerProps> = ({
       <DialogContent className={classes.centerText}>
         <a rel="ar" href={open !== null ? yogaPoses[open].ar?.usdz : ""}>
           <img
-            width="311"
-            height="311"
+            width="200"
+            height="200"
             alt={open !== null ? yogaPoses[open].name : ""}
             src={open !== null ? yogaPoses[open].ar?.preview : ""}
           />{" "}
