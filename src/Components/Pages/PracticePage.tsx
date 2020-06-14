@@ -8,12 +8,13 @@ import {
 import { Pose } from "@tensorflow-models/posenet";
 import React, { Fragment } from "react";
 import { PageProps } from ".";
+import { yogaPoses } from "../../Data/poses";
 import { Calibration, getCalibration } from "../../Scripts/poseCalibration";
 import CalibrateCamera from "../Content/GameModules/CalibrateCamera";
 import Dance from "../Content/GameModules/Dance";
 import GrantCameraAccess from "../Content/GameModules/GrantCameraAccess";
 import ScoreScreen from "../Content/GameModules/ScoreScreen";
-import SelectDance from "../Content/GameModules/SelectDance";
+import SelectPoses from "../Content/GameModules/SelectPoses";
 import ErrorPage from "./ErrorPage";
 
 const PracticePage: React.FunctionComponent<PageProps> = ({
@@ -27,12 +28,13 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
   const [calibration, setCalibration] = React.useState<Calibration | null>(
     null
   );
-  const [danceName, setDanceName] = React.useState<string>("");
-  const [speed, setSpeed] = React.useState<number>(10000);
+  const [poses, setPoses] = React.useState<boolean[]>(
+    yogaPoses.map(() => true)
+  );
   const steps = [
     "Grant Camera Permission",
     "Calibrate Camera",
-    "Select a Dance",
+    "Select Poses",
     "Dance!",
   ];
 
@@ -47,6 +49,7 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
           />
         );
       case 1:
+        handleNext();
         return (
           <CalibrateCamera
             nextStep={handleNext}
@@ -57,13 +60,13 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
         );
       case 2:
         return (
-          <SelectDance
+          <SelectPoses
             nextStep={handleNext}
             previousStep={handleBack}
             skipStep={handleSkip}
             classes={classes}
-            setDanceName={setDanceName}
-            setSpeed={setSpeed}
+            poses={poses}
+            setPoses={setPoses}
           />
         );
       case 3:
@@ -74,8 +77,6 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
               previousStep={handleBack}
               classes={classes}
               calibration={calibration}
-              danceName={danceName !== "" ? danceName : undefined}
-              speed={danceName === "" ? speed : undefined}
             />
           );
         } else {

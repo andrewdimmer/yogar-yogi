@@ -13,8 +13,8 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import React, { Fragment } from "react";
 import { PageProps } from ".";
 import { yogaPoses } from "../../Data/poses";
-import VideoInfoViewer from "../Content/InfoViewers/VideoInfoViewer";
 import ArInfoViewer from "../Content/InfoViewers/ArInfoViewer";
+import VideoInfoViewer from "../Content/InfoViewers/VideoInfoViewer";
 
 const LearnPage: React.FunctionComponent<PageProps> = ({ classes }) => {
   const [arOpen, setArOpen] = React.useState<number | null>(null);
