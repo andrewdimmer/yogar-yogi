@@ -16,7 +16,7 @@ import ScoreScreen from "../Content/GameModules/ScoreScreen";
 import SelectDance from "../Content/GameModules/SelectDance";
 import ErrorPage from "./ErrorPage";
 
-const PlayPage: React.FunctionComponent<PageProps> = ({
+const PracticePage: React.FunctionComponent<PageProps> = ({
   setPageKey,
   setNotification,
   setLoadingMessage,
@@ -194,4 +194,4 @@ const PlayPage: React.FunctionComponent<PageProps> = ({
   );
 };
 
-export default PlayPage;
+export default PracticePage;

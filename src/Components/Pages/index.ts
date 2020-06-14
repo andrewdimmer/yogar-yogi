@@ -5,7 +5,8 @@ import PlayIcon from "@material-ui/icons/SportsEsports";
 import { NotificationMessage } from "../Misc/Notifications";
 import ErrorPage from "./ErrorPage";
 import HomePage from "./HomePage";
-import PlayPage from "./PlayPage";
+import PracticePage from "./PracticePage";
+import LearnPage from "./LearnPage";
 
 export declare interface PageProps {
   setPageKey: (pageKey: string) => void;
@@ -38,13 +39,22 @@ const pageList: PageListItem[] = [
     component: HomePage,
   },
   {
-    key: "play",
-    title: "Play",
-    menuLabel: "Play",
+    key: "learn",
+    title: "Learn",
+    menuLabel: "Learn",
     menuIcon: PlayIcon,
     displaySignedIn: true,
     displaySignedOut: true,
-    component: PlayPage,
+    component: LearnPage,
+  },
+  {
+    key: "practive",
+    title: "Practice",
+    menuLabel: "Practice",
+    menuIcon: PlayIcon,
+    displaySignedIn: true,
+    displaySignedOut: true,
+    component: PracticePage,
   },
 ];
 
