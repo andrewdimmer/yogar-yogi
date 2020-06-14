@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/yogar-yogi/static/css/main.69eda509.chunk.css",
-    "main.js": "/yogar-yogi/static/js/main.716e2b52.chunk.js",
-    "main.js.map": "/yogar-yogi/static/js/main.716e2b52.chunk.js.map",
+    "main.js": "/yogar-yogi/static/js/main.fcc0852e.chunk.js",
+    "main.js.map": "/yogar-yogi/static/js/main.fcc0852e.chunk.js.map",
     "runtime-main.js": "/yogar-yogi/static/js/runtime-main.374ee10b.js",
     "runtime-main.js.map": "/yogar-yogi/static/js/runtime-main.374ee10b.js.map",
     "static/js/2.125fe97b.chunk.js": "/yogar-yogi/static/js/2.125fe97b.chunk.js",
     "static/js/2.125fe97b.chunk.js.map": "/yogar-yogi/static/js/2.125fe97b.chunk.js.map",
     "index.html": "/yogar-yogi/index.html",
-    "precache-manifest.3899d5c862e84e3db8f6f17897f8a77d.js": "/yogar-yogi/precache-manifest.3899d5c862e84e3db8f6f17897f8a77d.js",
+    "precache-manifest.acbfa7cb3255bbc6199baefbe8a873c4.js": "/yogar-yogi/precache-manifest.acbfa7cb3255bbc6199baefbe8a873c4.js",
     "service-worker.js": "/yogar-yogi/service-worker.js",
     "static/css/main.69eda509.chunk.css.map": "/yogar-yogi/static/css/main.69eda509.chunk.css.map",
     "static/js/2.125fe97b.chunk.js.LICENSE.txt": "/yogar-yogi/static/js/2.125fe97b.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.374ee10b.js",
     "static/js/2.125fe97b.chunk.js",
     "static/css/main.69eda509.chunk.css",
-    "static/js/main.716e2b52.chunk.js"
+    "static/js/main.fcc0852e.chunk.js"
   ]
 }
