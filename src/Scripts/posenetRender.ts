@@ -14,6 +14,8 @@ export function renderPosesOnCanvas(
   const ctx = canvas.getContext("2d");
   const video = document.getElementById("video") as HTMLVideoElement;
 
+  console.log(poses);
+
   if (ctx) {
     // since images are being fed from a webcam, we want to feed in the
     // original image and then just flip the keypoints' x coordinates. If instead
@@ -47,8 +49,8 @@ export function renderPosesOnCanvas(
             return {
               part: keypoint.part,
               position: {
-                x: keypoint.position.x + keypoints[5].position.x,
-                y: keypoint.position.y + keypoints[5].position.y,
+                x: keypoint.position.x,
+                y: keypoint.position.y,
               },
               score: keypoint.score,
             };

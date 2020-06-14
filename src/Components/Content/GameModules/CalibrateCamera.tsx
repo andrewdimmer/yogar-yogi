@@ -24,8 +24,8 @@ const CalibrateCamera: React.FunctionComponent<CalibrateCameraProps> = ({
         <Typography variant="h4">Calibrate Camera</Typography>
       </Container>
       <Typography variant="body1" className={classes.marginedTopBottom}>
-        Dance 'Til You Drop uses your image to see when you've done each dance
-        move. To do that, we first need to know where you are in the picture.
+        yogAR yogi uses your image to see when you've done each pose. To do
+        that, we first need to know where you are in the picture.
       </Typography>
       <Typography variant="body1" className={classes.marginedTopBottom}>
         When you're ready, press the "Calibrate Camera" button below, then stand
@@ -33,7 +33,7 @@ const CalibrateCamera: React.FunctionComponent<CalibrateCameraProps> = ({
       </Typography>
       <Typography variant="body1" className={classes.marginedTopBottom}>
         After 10 seconds, it will use your current pose to identify where you'll
-        be dancing.
+        be practicing.
       </Typography>
       <Typography variant="body1" className={classes.marginedTopBottom}>
         Ready? Press the button below to calibrate the camera!

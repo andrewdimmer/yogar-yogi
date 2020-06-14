@@ -13,14 +13,14 @@ import {
   setCalibrationNumber,
   Calibration,
 } from "../../Scripts/poseCalibration";
+import { createDanceGenerator } from "../../Scripts/poseDisplay";
 
 declare interface FullScreenWebcamOverlayProps {
   onClose: () => void;
   classes: any;
   setCalibration?: (poses: Pose[]) => void;
   calibration?: Calibration;
-  danceName?: string;
-  speed?: number;
+  possiblePoses?: Pose[];
 }
 
 const FullScreenWebcamOverlay: React.FunctionComponent<FullScreenWebcamOverlayProps> = ({
@@ -28,8 +28,7 @@ const FullScreenWebcamOverlay: React.FunctionComponent<FullScreenWebcamOverlayPr
   classes,
   setCalibration,
   calibration,
-  danceName,
-  speed,
+  possiblePoses,
 }) => {
   const [maxWidth, setMaxWidth] = React.useState<number>(0);
   const [maxHeight, setMaxHeight] = React.useState<number>(0);
@@ -69,8 +68,14 @@ const FullScreenWebcamOverlay: React.FunctionComponent<FullScreenWebcamOverlayPr
             }
           }, 10000))(calNumber);
       }
-      console.log(calibration);
-      console.log(speed);
+      if (possiblePoses !== undefined && calibration) {
+        createDanceGenerator(
+          calibration,
+          Math.floor(Math.random() * 1000000000) + 1,
+          possiblePoses,
+          handleUpdateMatchMe
+        );
+      }
     }
   };
 

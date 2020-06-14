@@ -8,12 +8,13 @@ import {
 import { Pose } from "@tensorflow-models/posenet";
 import React, { Fragment } from "react";
 import { PageProps } from ".";
+import { yogaPoses } from "../../Data/poses";
 import { Calibration, getCalibration } from "../../Scripts/poseCalibration";
 import CalibrateCamera from "../Content/GameModules/CalibrateCamera";
-import Dance from "../Content/GameModules/Dance";
+import Practice from "../Content/GameModules/Practice";
 import GrantCameraAccess from "../Content/GameModules/GrantCameraAccess";
 import ScoreScreen from "../Content/GameModules/ScoreScreen";
-import SelectDance from "../Content/GameModules/SelectDance";
+import SelectPoses from "../Content/GameModules/SelectPoses";
 import ErrorPage from "./ErrorPage";
 
 const PracticePage: React.FunctionComponent<PageProps> = ({
@@ -27,13 +28,14 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
   const [calibration, setCalibration] = React.useState<Calibration | null>(
     null
   );
-  const [danceName, setDanceName] = React.useState<string>("");
-  const [speed, setSpeed] = React.useState<number>(10000);
+  const [poses, setPoses] = React.useState<boolean[]>(
+    yogaPoses.map(() => true)
+  );
   const steps = [
     "Grant Camera Permission",
     "Calibrate Camera",
-    "Select a Dance",
-    "Dance!",
+    "Select Poses",
+    "Practice!",
   ];
 
   function getStepContent(step: number) {
@@ -57,25 +59,29 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
         );
       case 2:
         return (
-          <SelectDance
+          <SelectPoses
             nextStep={handleNext}
             previousStep={handleBack}
             skipStep={handleSkip}
             classes={classes}
-            setDanceName={setDanceName}
-            setSpeed={setSpeed}
+            poses={poses}
+            setPoses={setPoses}
           />
         );
       case 3:
         if (calibration !== null) {
           return (
-            <Dance
+            <Practice
               nextStep={handleNext}
               previousStep={handleBack}
               classes={classes}
               calibration={calibration}
-              danceName={danceName !== "" ? danceName : undefined}
-              speed={danceName === "" ? speed : undefined}
+              poses={yogaPoses.reduce((prev, current, index) => {
+                if (poses[index] && current.pose) {
+                  prev.push(current.pose);
+                }
+                return prev;
+              }, [] as Pose[])}
             />
           );
         } else {
@@ -167,7 +173,7 @@ const PracticePage: React.FunctionComponent<PageProps> = ({
     <Fragment>
       <Container className={classes.pageTitle}>
         <Typography variant="h3">
-          Let's get ready to play Dance 'Til You Drop!
+          Let's get ready to play yogAR yogi!
         </Typography>
       </Container>
       <Stepper activeStep={activeStep} className={classes.themeBackgroundColor}>
