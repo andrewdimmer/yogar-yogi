@@ -9,7 +9,7 @@ const HomePage: React.FunctionComponent<PageProps> = ({ setPageKey }) => {
   return (
     <Fragment>
       <Container className={classes.pageTitle}>
-        <Typography variant="h3">Dance 'Til You Drop!</Typography>
+        <Typography variant="h3">yogAR yogi!</Typography>
       </Container>
       <Button
         color="primary"
@@ -18,10 +18,22 @@ const HomePage: React.FunctionComponent<PageProps> = ({ setPageKey }) => {
         size="large"
         className={classes.marginedTopBottom}
         onClick={() => {
-          setPageKey("play");
+          setPageKey("learn");
         }}
       >
-        <Typography variant="h4">Play!</Typography>
+        <Typography variant="h4">Learn New Poses!</Typography>
+      </Button>
+      <Button
+        color="primary"
+        fullWidth
+        variant="contained"
+        size="large"
+        className={classes.marginedTopBottom}
+        onClick={() => {
+          setPageKey("practice");
+        }}
+      >
+        <Typography variant="h4">Practice Your Yoga!</Typography>
       </Button>
     </Fragment>
   );

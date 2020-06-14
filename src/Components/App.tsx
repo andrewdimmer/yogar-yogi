@@ -38,7 +38,7 @@ const App: React.FunctionComponent<AppProps> = ({ theme, toggleTheme }) => {
           setNotification={setNotification}
           classes={classes}
         />
-        {pageKey !== "home" && pageKey !== "play" && (
+        {pageKey !== "home" && (
           <Button
             color="primary"
             fullWidth
@@ -49,7 +49,7 @@ const App: React.FunctionComponent<AppProps> = ({ theme, toggleTheme }) => {
               setPageKey("home");
             }}
           >
-            <Typography variant="h4">Return to Home</Typography>
+            <Typography variant="h6">Return to Home</Typography>
           </Button>
         )}
       </Container>
